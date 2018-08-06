@@ -32,7 +32,7 @@ import Svg,{
 
 export default class App extends React.Component {
   render() {
-    console.log(width);
+    //console.log(width);
     return (
       // <View style={styles.container}>
       //   <ZoomableSvg width={width} height={height} />
