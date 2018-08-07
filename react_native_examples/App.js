@@ -8,6 +8,7 @@ import ZoomableSvg from './src/components/ZoomableSvg';
 
 import TimerExample from './src/components/TimerExample';
 import AuthApp from './src/auth/AuthApp';
+import TechStackApp from './src/tech_stack_redux_example/TechStackApp';
 
 import Svg,{
   Circle,
@@ -40,8 +41,8 @@ export default class App extends React.Component {
         
       // </View>
 
-        <View>
-            <AuthApp/>
+        <View style = {{flex: 1}}>
+            <TechStackApp/>
         </View>
 
       
