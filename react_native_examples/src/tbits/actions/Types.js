@@ -1,0 +1,1 @@
+export const SVG_DATA_CHANGED = 'SVG_DATA_CHANGED'

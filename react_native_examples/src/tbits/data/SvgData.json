@@ -1,0 +1,25 @@
+{
+    "svgHeight": "800",
+    "svgWidth": "800",
+    "plotData": [
+        {
+            "plotId": 1,
+            "polygon": "100 100 200 200 150 500", 
+            "status": "SOLD",
+            "colour": "red"
+        }, 
+        {
+            "plotId": 2,
+            "polygon": "400 100 200 200 150 700", 
+            "status": "HOLD",
+            "colour": "yellow"
+        },
+        {
+            "plotId": 3,
+            "polygon": "150 10 20 600 2 500", 
+            "status": "AVAILABLE",
+            "colour": "green"
+        }
+    ]
+}
+

@@ -9,6 +9,8 @@ import ZoomableSvg from './src/components/ZoomableSvg';
 import TimerExample from './src/components/TimerExample';
 import AuthApp from './src/auth/AuthApp';
 import TechStackApp from './src/tech_stack_redux_example/TechStackApp';
+import ManagerApp from './src/manager/ManagerApp'
+
 
 import Svg,{
   Circle,
@@ -27,6 +29,7 @@ import Svg,{
   Defs,
   Stop
 } from 'react-native-svg';
+import TbitsApp from './src/tbits/TbitsApp';
 
 
  const { width, height } = Dimensions.get('window');
@@ -41,8 +44,12 @@ export default class App extends React.Component {
         
       // </View>
 
+        // <View style = {{flex: 1}}>
+        //     <ManagerApp/>
+        // </View>
+
         <View style = {{flex: 1}}>
-            <TechStackApp/>
+            <TbitsApp/>
         </View>
 
       
@@ -64,6 +71,7 @@ const styles = StyleSheet.create({
   // },
 
   container: {
+    flex: 1,
     backgroundColor: '#ecf0f1',
   },
 });
