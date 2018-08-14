@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
+import {Button, Header} from './common'
 
 export default class TimerExample extends Component {
     constructor() {
@@ -32,7 +33,12 @@ export default class TimerExample extends Component {
   
     render() {
       return(
-        <View></View>
+        <View style={{flex: 1}}>
+          <Header headerText = 'Timer Example'/>
+          <Button>
+            Move to next screen
+          </Button>
+        </View>
       );
     }
   }

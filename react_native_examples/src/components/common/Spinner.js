@@ -1,19 +1,24 @@
 import React from 'react';
-import {View, ActivityIndicator} from 'react-native';
+import {View, ActivityIndicator, Text} from 'react-native';
+
+
 
 const Spinner = ({size}) => {
+    
     return (
         <View style = {styles.spinnerStyle}>
             <ActivityIndicator size={size || 'large'} />
+            <Text style={{marginLeft : 5}}>loading</Text>
         </View>
     );
 }
 
 const styles = {
    spinnerStyle: {
-       flex:1,
+       flexDirection: 'row',
        justifyContent: 'center',
        alignItems: 'center',
+       
        padding: 5,
    }
 }

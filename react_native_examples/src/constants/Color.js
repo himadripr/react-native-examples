@@ -1,0 +1,1 @@
+export const LIGHT_BLUE_COLOR = '#007aff';

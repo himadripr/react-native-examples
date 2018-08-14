@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Dimensions, StyleSheet, Text} from 'react-native'
+import {View, Dimensions, StyleSheet, Text, Animated} from 'react-native'
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import Login from './components/Login'
@@ -17,7 +17,7 @@ class TbitsApp extends Component{
             <Provider store = {createStore(reducers)}>
                 <View style={styles.container}>
                     <Header headerText = 'Property Id = 1'/>
-                    <TbitsZoomableSvg width = {width} height={height-200}/>
+                    <TbitsZoomableSvg width = {width-210} height={height-10}/>
                     
                     
                 </View>
@@ -29,6 +29,7 @@ class TbitsApp extends Component{
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      
       flexDirection: 'column',
       backgroundColor: '#ecf0f1',
     },

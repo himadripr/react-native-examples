@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import {Header} from './src/components/common';
+import { Router, Scene, Actions } from 'react-native-router-flux';
+import {Header, Button} from './src/components/common';
 import AlbumList from './src/albums/components/AlbumList';
 import FetchExample from './src/components/FetchExample';
 import Login from './src/tbits/components/Login'
@@ -10,8 +11,11 @@ import TimerExample from './src/components/TimerExample';
 import AuthApp from './src/auth/AuthApp';
 import TechStackApp from './src/tech_stack_redux_example/TechStackApp';
 import ManagerApp from './src/manager/ManagerApp'
+import EmployeeList from './src/manager/components/EmployeeList'
+import RouterComponent from './src/manager/RouterManager'
 
-
+// "react": "16.3.1",
+    // "react-native": "~0.55.2",
 import Svg,{
   Circle,
   Ellipse,
@@ -30,7 +34,8 @@ import Svg,{
   Stop
 } from 'react-native-svg';
 import TbitsApp from './src/tbits/TbitsApp';
-
+import EmployeeCreate from './src/manager/components/EmployeeCreate';
+ 
 
  const { width, height } = Dimensions.get('window');
 
@@ -45,8 +50,42 @@ export default class App extends React.Component {
       // </View>
 
         // <View style = {{flex: 1}}>
-        //     <ManagerApp/>
+        //     <TimerExample/>
         // </View>
+
+        
+
+//  <Router  sceneStyle = {{paddingTop: 1}}>
+//     <Scene key="root">
+    
+//        <Scene key="managerAppStarting" component={ManagerApp} title="Login"  />
+     
+//        <Scene 
+//             key="employeeList" 
+//             component={EmployeeList} 
+//             title="Employees"
+//             renderRightButton = {()=> {
+//               return(
+//                 <Button onPress = {()=>Actions.employeeCreate()}>
+//                   Add
+//                 </Button>
+//               )
+//             }}
+            
+//             initial
+//             />
+//         <Scene key="employeeCreate" component = {EmployeeCreate} title="Employee Create Form"/>
+        
+        
+
+//       </Scene>
+     
+ 
+// </Router> 
+
+       
+
+        // <RouterComponent/>
 
         <View style = {{flex: 1}}>
             <TbitsApp/>

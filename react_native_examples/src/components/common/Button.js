@@ -1,8 +1,15 @@
 import React from 'react'
 import {Text, TouchableOpacity} from 'react-native';
 
+var paddingTopField = 10;
+var paddingBottomField = 10;
+var fontSizeField = 18;
+
 //one way to use props text another way is to use children props
-const Button  = ( { onPress, children } ) => {
+const Button  = ( { onPress, children, paddingTop, paddingBottom, fontSize } ) => {
+    paddingTopField = paddingTop
+    paddingBottomField = paddingBottom
+    fontSizeField = fontSize
     const {buttonStyle, textStyle} = styles;
     return(
         <TouchableOpacity 
@@ -29,10 +36,10 @@ const styles = {
     textStyle: {
         alignSelf: 'center',
         color: '#007aff',
-        fontSize: 16,
+        fontSize: fontSizeField,
         fontWeight: '600', //boldness
-        paddingTop: 10,
-        paddingBottom: 10
+        paddingTop: paddingTopField,
+        paddingBottom: paddingBottomField
     }
 }
 
