@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {  View, StyleSheet, PanResponder, Dimensions, Text, Image, TouchableOpacity } from 'react-native';
 import {Container, Content, StyleProvider} from 'native-base'
+import Orientation from 'react-native-orientation'
 import {connect} from 'react-redux';
 import {albumDataChanged, svgDataChanged} from '../actions'
 import  {Card, CardSection, Spinner, Button} from '../../components/common'
@@ -66,6 +67,8 @@ class TbitsZoomableSvg extends Component {
     isLoading: false,
     rotationAngle: "0",
     originOfRotation : "0, 0",
+    xOriginOfRotation: 0,
+    yOriginOfRotation: 0,
     plotId: "0",
     status: "none",
     zoom: 1,
@@ -116,6 +119,17 @@ class TbitsZoomableSvg extends Component {
   }
 
   processTouch(x, y) {
+    
+    const {rotationAngle, xOriginOfRotation, yOriginOfRotation} = this.state
+    console.log(xOriginOfRotation)
+    console.log(yOriginOfRotation)
+    // if (parseInt(this.state.rotationAngle, 10) != 0){
+        
+    //     x = x* Math.cos(rotationAngle) - y*Math.sin(rotationAngle)+xOriginOfRotation;
+    //     y = y* Math.cos(rotationAngle) + x*Math.sin(rotationAngle)+yOriginOfRotation;
+    // }
+    
+
     if (!this.state.isMoving || this.state.isZooming) {
         //console.log('isMoving')
       const { top, left } = this.state;
@@ -200,6 +214,10 @@ class TbitsZoomableSvg extends Component {
        this.props.albumDataChanged(response.data)
   }
 
+  componentDidMount(){
+     Orientation.lockToLandscapeLeft
+  }
+
   componentWillMount() {
       this.createPanResponder()
       console.log('component willlll mount')
@@ -217,16 +235,19 @@ class TbitsZoomableSvg extends Component {
 
   rotateAntiClockwise(direction){
      const { height, width } = this.props;
-     const xOriginOfRotation = width/2;
-     const yOriginOfRotation = height/2;
+     var xOriginOfRotation = width/2;
+     var yOriginOfRotation = height/2;
+     xOriginOfRotation=yOriginOfRotation=0;
      const originOfRotation = ""+`${xOriginOfRotation}` + ", "+`${yOriginOfRotation}`
      var rotationAngle;
      if (direction === '+')
       {rotationAngle = parseInt(this.state.rotationAngle, 10) + 10}
       else 
       {rotationAngle = parseInt(this.state.rotationAngle, 10) - 10}
+     rotationAngle = rotationAngle%360
      const rotationAngleString = ""+`${rotationAngle}`
-     this.setState({originOfRotation: originOfRotation, rotationAngle: rotationAngleString})
+     this.setState({originOfRotation: originOfRotation, rotationAngle: rotationAngleString, xOriginOfRotation: xOriginOfRotation,
+      yOriginOfRotation: yOriginOfRotation})
   }
 
   displayData(responseJson){
@@ -513,10 +534,45 @@ class TbitsZoomableSvg extends Component {
   render (){
 
       return(
-            <View>
-                {this.renderUtil()}
+            // <View>
+            //     {this.renderUtil()}
                 
-            </View>
+            // </View>
+            <Svg
+    height="100"
+    width="200"
+>
+    <G
+        rotation="90"
+        origin="100, 50"
+    >
+        <Line
+            x1="60"
+            y1="10"
+            x2="140"
+            y2="10"
+            stroke="#060"
+        />
+
+        <Rect
+            x="60"
+            y="20"
+            height="50"
+            width="80"
+            stroke="#060"
+            fill="#060"
+        />
+
+        <Text
+            x="100"
+            y="75"
+            stroke="#600"
+            fill="#600"
+            textAnchor="middle"
+        >
+            Text grouped with shapes</Text>
+    </G>
+</Svg>
       );
   }
 }

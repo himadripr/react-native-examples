@@ -11,7 +11,7 @@ class Login extends Component {
     componentWillMount(){
         let details = {
             'username': 'himadri.p',
-            'password': 'root',
+            'password': 'ramsaurabhhimadri',
             'clientId': 1
         };
     

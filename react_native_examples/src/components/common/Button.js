@@ -1,8 +1,8 @@
 import React from 'react'
 import {Text, TouchableOpacity} from 'react-native';
 
-var paddingTopField = 10;
-var paddingBottomField = 10;
+var paddingTopField = 5;
+var paddingBottomField = 5;
 var fontSizeField = 18;
 
 //one way to use props text another way is to use children props
@@ -39,7 +39,9 @@ const styles = {
         fontSize: fontSizeField,
         fontWeight: '600', //boldness
         paddingTop: paddingTopField,
-        paddingBottom: paddingBottomField
+        paddingBottom: paddingBottomField,
+        padding: 5
+     
     }
 }
 

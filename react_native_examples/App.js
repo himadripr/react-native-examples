@@ -14,6 +14,13 @@ import ManagerApp from './src/manager/ManagerApp'
 import EmployeeList from './src/manager/components/EmployeeList'
 import RouterComponent from './src/manager/RouterManager'
 
+import {Provider} from 'react-redux';
+
+import ReduxThunk from 'redux-thunk';
+
+import {createStore, applyMiddleware} from 'redux';
+import reducers from './src/manager/reducers'
+
 // "react": "16.3.1",
     // "react-native": "~0.55.2",
 import Svg,{
@@ -49,47 +56,53 @@ export default class App extends React.Component {
         
       // </View>
 
-        // <View style = {{flex: 1}}>
-        //     <TimerExample/>
-        // </View>
+        <View style = {{flex: 1}}>
+            <Login/>
+        </View>
 
-        
+        // <Provider store = {
+        //   createStore(reducers,
+        //   {}, 
+        //   applyMiddleware(ReduxThunk))}>
 
-//  <Router  sceneStyle = {{paddingTop: 1}}>
-//     <Scene key="root">
-    
-//        <Scene key="managerAppStarting" component={ManagerApp} title="Login"  />
+        //   <Router  sceneStyle = {{paddingTop: 1}}>
+        //       <Scene key="root">
+
+                 
+        //           <Scene key="managerAppStarting" component={ManagerApp} title="Login"  
+        //                />
+        //           <Scene 
+        //                 key="employeeList" 
+        //                 component={EmployeeList} 
+        //                 title="Employees"
+        //                 initial
+        //                 renderBackButton={()=>(<View></View>)}
+        //                 renderRightButton = {()=> {
+        //                   return(
+        //                     <Button onPress = {()=>Actions.employeeCreate()}>
+        //                       +
+        //                     </Button>
+        //                   )
+        //                 }}
+        //             />
+        //           <Scene key="employeeCreate" component = {EmployeeCreate} title="Employee Create Form"/>
+        //       </Scene>
      
-//        <Scene 
-//             key="employeeList" 
-//             component={EmployeeList} 
-//             title="Employees"
-//             renderRightButton = {()=> {
-//               return(
-//                 <Button onPress = {()=>Actions.employeeCreate()}>
-//                   Add
-//                 </Button>
-//               )
-//             }}
-            
-//             initial
-//             />
-//         <Scene key="employeeCreate" component = {EmployeeCreate} title="Employee Create Form"/>
-        
+        //     </Router> 
+          
+        //   </Provider>
+
         
 
-//       </Scene>
-     
  
-// </Router> 
 
        
 
         // <RouterComponent/>
 
-        <View style = {{flex: 1}}>
-            <TbitsApp/>
-        </View>
+        // <View style = {{flex: 1}}>
+        //     <TbitsApp/>
+        // </View>
 
       
     //  <View style = {{flex: 1}}>

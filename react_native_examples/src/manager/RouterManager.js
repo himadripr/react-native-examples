@@ -3,6 +3,7 @@ import {Scene, Router} from 'react-native-router-flux';
 import ManagerApp from './ManagerApp'
 import EmployeeList from './components/EmployeeList'
 import Button from '../components/common'
+import { View } from 'native-base';
 
 
 const RouterComponent = () => {
@@ -24,11 +25,12 @@ const RouterComponent = () => {
                         </Button>
                     )
                     }}
+                    renderBackButton = {()=> <View></View>}
                     
                     initial
                     />
 
-            </Scene>
+                </Scene>
 
         </Router> 
     );

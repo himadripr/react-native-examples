@@ -25,12 +25,13 @@ class ManagerApp extends Component{
 
     render(){
         return (
-            <Provider store = {
-                createStore(reducers,
-                {}, 
-                applyMiddleware(ReduxThunk))}>
-                <LoginForm/>
-            </Provider>
+            // <Provider store = {
+            //     createStore(reducers,
+            //     {}, 
+            //     applyMiddleware(ReduxThunk))}>
+            //     <LoginForm/>
+            // </Provider>
+            <LoginForm/>
         );
     }
 }
